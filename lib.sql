@@ -1,5 +1,5 @@
 /*
-Procedure	:	dbo.kSql_CheckIdentificationWithMernis
+Procedure	:	dbo.kSql_TurkishCitizenshipVerification
 Create Date	:	2021.05.17
 Author		:	Karcan Ozbal
 
@@ -12,7 +12,7 @@ Parameter(s):	@IdentificationNumber	:	11 character identification number
 				@Result (bit OUTPUT)	:	true / false result of check.
 
 Usage		:	DECLARE @Output bit
-				EXEC kSql_CheckIdentificationWithMernis 11111111111, 'Karcan', 'Özbal' , 1993, @Output OUTPUT
+				EXEC kSql_TurkishCitizenshipVerification 11111111111, 'Karcan', 'Özbal' , 1993, @Output OUTPUT
 				SELECT @Output as Result
 
 Dependencies:	Ole Automation:
@@ -37,7 +37,7 @@ Date(yyyy-MM-dd hh:mm)		Author				Commit
 ############################################################################################
 
 */
-CREATE PROCEDURE [dbo].[kSql_CheckIdentificationWithMernis] @IdentificationNumber char(11), @FirstName varchar(25) , @LastName varchar(25) , @BirthYear varchar(4), @Result bit OUTPUT
+CREATE PROCEDURE [dbo].[kSql_TurkishCitizenshipVerification] @IdentificationNumber char(11), @FirstName varchar(25) , @LastName varchar(25) , @BirthYear varchar(4), @Result bit OUTPUT
 AS
 BEGIN
 	DECLARE @HR int
